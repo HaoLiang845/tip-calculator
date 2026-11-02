@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tip Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui, sans-serif;
+      background: #f0f2f5;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 360px;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h1 {
+      margin: 0 0 1.5rem;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .field label {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .field input,
+    .field select {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #d0d5dd;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    #calculate {
+      width: 100%;
+      margin-top: 0.25rem;
+      padding: 0.65rem;
+      border: none;
+      border-radius: 6px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #calculate:hover {
+      background: #1d4ed8;
+    }
+
+    #result {
+      margin-top: 1.25rem;
+      text-align: center;
+    }
+
+    #result .error {
+      color: #b91c1c;
+    }
+
+    #result p {
+      margin: 0.35rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Tip Calculator</h1>
+    <div class="field">
+      <label for="billAmount">Bill amount</label>
+      <input type="number" id="billAmount" placeholder="Enter bill amount">
+    </div>
+    <div class="field">
+      <label for="tipPercent">Tip percent</label>
+      <select id="tipPercent">
+        <option value="10">10%</option>
+        <option value="15">15%</option>
+        <option value="20">20%</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="numberOfPeople">Number of people</label>
+      <input type="number" id="numberOfPeople" placeholder="Enter number of people">
+    </div>
+    <button id="calculate">Calculate</button>
+    <div id="result"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
